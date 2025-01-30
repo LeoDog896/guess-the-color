@@ -41,7 +41,12 @@
 		hex: string;
 	}
 
-	let typedColors = colornames as ColorEntry[];
+	let typedColors = (colornames as ColorEntry[]).filter(color => {
+        const normalizedName = normalizeColorName(color.name)
+        if (normalizedName === 'white' || normalizedName === 'black') return false;
+
+        return true;
+    });
 
 	/** A map from normalized names to color entries */
 	const map = new Map<string, ColorEntry>();
@@ -68,7 +73,9 @@
         1: ':(',
 		5: 'aol.com ishihara test.',
 		25: 'wow! you can be a ux designer with that skill!',
+        35: 'there are more colors than red.. or green.. or blue..',
 		50: 'i want you right now to bing.com "rainbow worksheet".',
+        65: "i bet you havent even seen proper color theory in a children's hospital",
 		75: 'this. is actually still bad. sorry :/',
 		85: 'i invited my little cousin to play this game and she still did better.',
 		90: "really close! do you want a little treat perhaps?",
@@ -138,6 +145,11 @@
             type="text"
             bind:value={guess}
             placeholder="Color Name"
+            onkeypress={(event) => {
+                if (event.key === 'Enter') {
+                    submit()
+                }
+            }}
         />
 		<Button
 			onclick={submit}
