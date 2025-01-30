@@ -32,15 +32,23 @@
     import Button from '$lib/Button.svelte';
     import { colornames } from 'color-name-list';
     import { diff, rgb_to_lab } from 'color-diff'
+    import Fuse from 'fuse.js'
 
-    let typedColors = colornames as ({ name: string, hex: string })[];
-
-    /** A map from normalized names to hex */
-    const map = new Map<string, string>();
-
-    for (const { name, hex } of typedColors) {
-        map.set(normalizeColorName(name), hex);
+    interface ColorEntry {
+        name: string;
+        hex: string;
     }
+
+    let typedColors = colornames as ColorEntry[];
+
+    /** A map from normalized names to color entries */
+    const map = new Map<string, ColorEntry>();
+
+    for (const entry of typedColors) {
+        map.set(normalizeColorName(entry.name), entry);
+    }
+
+    const fuse = new Fuse(typedColors, { keys: ["name"] });
 
     let color = $state(random(typedColors));
 
@@ -70,15 +78,18 @@
         const normalizedGuess = normalizeColorName(guess);
 
         if (!map.has(normalizedGuess)) {
+            const similarColor = fuse.search(normalizedGuess)
+            const similarColorMessage = similarColor[0] ? ` Do you mean ${similarColor[0].item.name}?` : ""
+
             message = {
                 status: 'bad',
-                message: 'Color not found.'
+                message: `Color not found.${similarColorMessage}`
             }
 
             return;
         }
 
-        const hex = map.get(normalizedGuess)!
+        const { hex } = map.get(normalizedGuess)!
         
         if (color.hex !== hex) {
             const distance = diff(
