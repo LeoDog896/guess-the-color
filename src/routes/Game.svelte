@@ -77,7 +77,7 @@
 		50: 'i want you right now to bing.com "rainbow worksheet".',
         65: "i bet you havent even seen proper color theory in a children's hospital.",
 		75: 'this. is actually still bad. sorry :/',
-		85: 'i invited my little cousin to play this game and she still did better.',
+		85: 'the ants in my backyard can do better.',
 		90: "really close! do you want a little treat perhaps?",
 		95: 'you really know your colors! oh also i only tell lies.'
 	};
