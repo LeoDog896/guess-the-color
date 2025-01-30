@@ -105,7 +105,7 @@
 
 			const stylizedColor = `"<span class="guess" style="--color: ${color.hex}">${color.name}</span>."`;
 
-			const normalizedDistance = Math.trunc((101 - distance) / (100 / 101));
+			const normalizedDistance = Math.trunc((101 - distance) / (101 / 100));
 
 			const [, taunt] = sortedPairedMessages.find(
 				([threshold]) => normalizedDistance >= parseInt(threshold)
