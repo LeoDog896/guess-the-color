@@ -1,37 +1,37 @@
 <script lang="ts">
-    import '@fontsource/ultra';
-    import '@fontsource/cambay';
-    import '@fontsource/sanchez';
-    import '../app.css'
+	import '@fontsource/ultra';
+	import '@fontsource/cambay';
+	import '@fontsource/sanchez';
+	import '../app.css';
 </script>
 
 <div class="background"></div>
 
 <div class="container">
-    <slot />
+	<slot />
 </div>
 
 <style>
-    div.background {
-        width: 100vw;
-        height: 100vh;
-        position: fixed;
-        background-image: repeating-conic-gradient(#FFC15E 0 9deg, #F7B05B 9deg 18deg);
-        transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
-        opacity: 1;
-        user-select: none;
-        z-index: -1;
-    }
+	div.background {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		background-image: repeating-conic-gradient(#ffc15e 0 9deg, #f7b05b 9deg 18deg);
+		transition: opacity 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+		opacity: 1;
+		user-select: none;
+		z-index: -1;
+	}
 
-    :global(body.game) div.background {
-        opacity: 0;
-    }
+	:global(body.game) div.background {
+		opacity: 0;
+	}
 
-    div.container {
-        display: flex;
-        width: 100%;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-    }
+	div.container {
+		display: flex;
+		width: 100%;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+	}
 </style>
