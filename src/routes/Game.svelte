@@ -74,7 +74,7 @@
 		5: 'aol.com ishihara test.',
 		25: 'wow! you can be a ux designer with that skill!',
         35: 'there are more colors than red.. or green.. or blue..',
-		50: 'i want you right now to bing.com "rainbow worksheet".',
+		50: 'i want you right now to bing.com "rainbow worksheet."',
         65: "i bet you havent even seen proper color theory in a children's hospital.",
 		75: 'this. is actually still bad. sorry :/',
 		85: 'the ants in my backyard can do better.',
