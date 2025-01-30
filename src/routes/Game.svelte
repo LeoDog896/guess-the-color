@@ -118,9 +118,11 @@
 				([threshold]) => normalizedDistance >= parseInt(threshold)
 			)!;
 
+			const guessSquares = `Compare: <span class="cbox" style="--color: ${color.hex};">✓</span><span class="cbox" style="--color: ${hex};">X</span>`
+
 			message = {
 				status: 'bad',
-				message: `${taunt} The color was ${stylizedColor} You were ${normalizedDistance}% correct.`
+				message: `${taunt} The color was ${stylizedColor} You were ${normalizedDistance}% correct. ${guessSquares}`
 			};
 
 			regenerateColor();
@@ -197,6 +199,11 @@
 
 	:global(span.guess) {
 		text-decoration: 3px underline var(--color);
+	}
+
+	:global(span.cbox) {
+		background-color: var(--color);
+		mix-blend-mode: difference;
 	}
 
     @media (max-width: 1000px) {
