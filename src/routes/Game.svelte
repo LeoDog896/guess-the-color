@@ -64,15 +64,15 @@
 	let message = $state<Message | null>(null);
 
 	const pairedMessages = {
-        0: 'That was really good! Just try doing it the other way around next time.',
+        0: 'That was incredible! Just try doing it the other way around next time.',
         1: ':(',
-		5: 'Might be a good time to take the Ishihara test.',
-		25: 'So close!',
-		50: 'At least you tried.',
-		75: 'Try doing better.',
-		85: 'Getting warmer.',
-		90: "I'm a little impressed. By your bad memory.",
-		95: 'Almost there.'
+		5: 'aol.com ishihara test.',
+		25: 'wow! you can be a ux designer with that skill!',
+		50: 'i want you right now to bing.com rainbow.',
+		75: 'this. is actually still bad. sorry :/',
+		85: 'i invited my little cousin to play this game and she still did better.',
+		90: "really close! do you want a little treat perhaps?",
+		95: 'you really know your colors! oh also i only tell lies.'
 	};
 
 	const sortedPairedMessages = Object.entries(pairedMessages).sort(
@@ -134,14 +134,18 @@
 	<div class="color" style:background-color={color.hex}></div>
 
 	<div class="input">
-		<input type="text" bind:value={guess} placeholder="Color Name" />
+		<input
+            type="text"
+            bind:value={guess}
+            placeholder="Color Name"
+        />
 		<Button
 			onclick={submit}
 			theme={{
 				top: '#111',
 				bottom: '#000',
 				color: 'white'
-			}}>Submit Guess</Button
+			}}>Guess</Button
 		>
 	</div>
 
