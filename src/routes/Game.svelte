@@ -154,7 +154,7 @@
 		<Button
 			onclick={submit}
 			theme={{
-				top: '#111',
+				top: '#444',
 				bottom: '#000',
 				color: 'white'
 			}}>Guess</Button
