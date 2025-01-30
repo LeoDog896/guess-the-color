@@ -11,6 +11,11 @@
 	<slot />
 </div>
 
+<footer>
+    <a href="https://leodog896.github.io/guess-the-color/">Source on GitHub</a>.
+    Made with Malice and Hatred.
+</footer>
+
 <style>
 	div.background {
 		width: 100vw;
@@ -34,4 +39,14 @@
 		align-items: center;
 		justify-content: center;
 	}
+
+    footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        padding: 0.5rem;
+        border-top: 2px solid black;
+        background-color: white;
+        text-align: center;
+    }
 </style>
