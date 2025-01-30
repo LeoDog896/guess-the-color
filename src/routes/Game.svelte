@@ -75,7 +75,7 @@
 		25: 'wow! you can be a ux designer with that skill!',
         35: 'there are more colors than red.. or green.. or blue..',
 		50: 'i want you right now to bing.com "rainbow worksheet".',
-        65: "i bet you havent even seen proper color theory in a children's hospital",
+        65: "i bet you havent even seen proper color theory in a children's hospital.",
 		75: 'this. is actually still bad. sorry :/',
 		85: 'i invited my little cousin to play this game and she still did better.',
 		90: "really close! do you want a little treat perhaps?",
@@ -162,7 +162,7 @@
 	</div>
 
 	{#if message}
-		<p>{@html message.message}</p>
+		<p class="message">{@html message.message}</p>
 	{/if}
 </main>
 
@@ -189,7 +189,26 @@
 		border: 4px solid black;
 	}
 
+    .message {
+        text-align: center;
+        padding: 0.5rem;
+        max-width: 600px;
+    }
+
 	:global(span.guess) {
 		text-decoration: 3px underline var(--color);
 	}
+
+    @media (max-width: 1000px) {
+        div.input {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input {
+            font-size: 1.5rem;
+        }
+    }
+
 </style>

@@ -12,7 +12,7 @@
 </div>
 
 <footer>
-    <a href="https://leodog896.github.io/guess-the-color/">Source on GitHub</a>.
+    <a href="https://github.com/LeoDog896/guess-the-color/">GitHub</a>.
     Made with Malice and Hatred.
 </footer>
 
