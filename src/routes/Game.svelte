@@ -64,6 +64,8 @@
 	let message = $state<Message | null>(null);
 
 	const pairedMessages = {
+        0: 'That was really good! Just try doing it the other way around next time.',
+        1: ':(',
 		5: 'Might be a good time to take the Ishihara test.',
 		25: 'So close!',
 		50: 'At least you tried.',
