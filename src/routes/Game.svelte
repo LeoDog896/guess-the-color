@@ -68,7 +68,7 @@
         1: ':(',
 		5: 'aol.com ishihara test.',
 		25: 'wow! you can be a ux designer with that skill!',
-		50: 'i want you right now to bing.com rainbow.',
+		50: 'i want you right now to bing.com "rainbow worksheet".',
 		75: 'this. is actually still bad. sorry :/',
 		85: 'i invited my little cousin to play this game and she still did better.',
 		90: "really close! do you want a little treat perhaps?",
@@ -113,7 +113,7 @@
 
 			message = {
 				status: 'bad',
-				message: `${taunt} The color was ${stylizedColor} You were ${normalizedDistance}% correct!`
+				message: `${taunt} The color was ${stylizedColor} You were ${normalizedDistance}% correct.`
 			};
 
 			regenerateColor();
