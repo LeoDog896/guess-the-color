@@ -41,12 +41,12 @@
 		hex: string;
 	}
 
-	let typedColors = (colornames as ColorEntry[]).filter(color => {
-        const normalizedName = normalizeColorName(color.name)
-        if (normalizedName === 'white' || normalizedName === 'black') return false;
+	let typedColors = (colornames as ColorEntry[]).filter((color) => {
+		const normalizedName = normalizeColorName(color.name);
+		if (normalizedName === 'white' || normalizedName === 'black') return false;
 
-        return true;
-    });
+		return true;
+	});
 
 	/** A map from normalized names to color entries */
 	const map = new Map<string, ColorEntry>();
@@ -69,16 +69,16 @@
 	let message = $state<Message | null>(null);
 
 	const pairedMessages = {
-        0: 'That was incredible! Just try doing it the other way around next time.',
-        1: ':(',
+		0: 'That was incredible! Just try doing it the other way around next time.',
+		1: ':(',
 		5: 'aol.com ishihara test.',
 		25: 'wow! you can be a ux designer with that skill!',
-        35: 'there are more colors than red.. or green.. or blue..',
+		35: 'there are more colors than red.. or green.. or blue..',
 		50: 'i highly suggest reviewing some color combinations.',
-        65: "i bet you havent even seen proper color theory in a children's hospital.",
+		65: "i bet you havent even seen proper color theory in a children's hospital.",
 		75: 'this. is actually still bad. sorry :/',
 		85: 'the ants in my backyard can do better.',
-		90: "really close! do you want a little treat perhaps?",
+		90: 'really close! do you want a little treat perhaps?',
 		95: 'you really know your colors! oh also i only tell lies.'
 	};
 
@@ -118,7 +118,7 @@
 				([threshold]) => normalizedDistance >= parseInt(threshold)
 			)!;
 
-			const guessSquares = `Compare: <span class="cbox" style="--color: ${color.hex};">✓</span><span class="cbox" style="--color: ${hex};">X</span>`
+			const guessSquares = `Compare: <span class="cbox" style="--color: ${color.hex};">✓</span><span class="cbox" style="--color: ${hex};">X</span>`;
 
 			message = {
 				status: 'bad',
@@ -144,15 +144,15 @@
 
 	<div class="input">
 		<input
-            type="text"
-            bind:value={guess}
-            placeholder="Color Name"
-            onkeypress={(event) => {
-                if (event.key === 'Enter') {
-                    submit()
-                }
-            }}
-        />
+			type="text"
+			bind:value={guess}
+			placeholder="Color Name"
+			onkeypress={(event) => {
+				if (event.key === 'Enter') {
+					submit();
+				}
+			}}
+		/>
 		<Button
 			onclick={submit}
 			theme={{
@@ -173,6 +173,7 @@
 		display: flex;
 		align-items: center;
 		flex-direction: column;
+		width: max-content;
 	}
 
 	div.color {
@@ -191,11 +192,11 @@
 		border: 4px solid black;
 	}
 
-    .message {
-        text-align: center;
-        padding: 0.5rem;
-        max-width: 600px;
-    }
+	.message {
+		text-align: center;
+		padding: 0.5rem;
+		max-width: 600px;
+	}
 
 	:global(span.guess) {
 		text-decoration: 3px underline var(--color);
@@ -206,16 +207,31 @@
 		mix-blend-mode: difference;
 	}
 
-    @media (max-width: 1000px) {
-        div.input {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+	@media (max-width: 1000px) {
+		div.input {
+			display: flex;
+			flex-direction: column;
+			gap: 1rem;
+		}
 
-        input {
-            font-size: 1.5rem;
-        }
-    }
+		input {
+			text-align: center;
+		}
+	}
 
+	@media (max-width: 600px) {
+		.input {
+			width: 75%;
+		}
+
+		input {
+			font-size: 1.5rem;
+		}
+	}
+
+	@media (max-width: 450px) {
+		main {
+			max-width: 300px;
+		}
+	}
 </style>

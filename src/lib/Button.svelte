@@ -37,7 +37,7 @@
 
 	button span {
 		display: block;
-		padding: 1rem 5rem;
+		padding: 1rem 3rem;
 		background-color: var(--top);
 		border-radius: 0.5rem;
 		transform: translateY(-4px);
@@ -51,5 +51,11 @@
 
 	button:active span {
 		transform: translateY(-2px);
+	}
+
+	@media (max-width: 800px) {
+		button span {
+			padding: 1rem 1rem;
+		}
 	}
 </style>

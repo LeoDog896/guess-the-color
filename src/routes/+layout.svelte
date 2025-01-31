@@ -12,8 +12,7 @@
 </div>
 
 <footer>
-    <a href="https://github.com/LeoDog896/guess-the-color/">GitHub</a>.
-    Made with Malice and Hatred.
+	<a href="https://github.com/LeoDog896/guess-the-color/">GitHub</a>. Made with Malice.
 </footer>
 
 <style>
@@ -40,13 +39,13 @@
 		justify-content: center;
 	}
 
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-        padding: 0.5rem;
-        border-top: 2px solid black;
-        background-color: white;
-        text-align: center;
-    }
+	footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
+		padding: 0.5rem;
+		border-top: 2px solid black;
+		background-color: white;
+		text-align: center;
+	}
 </style>

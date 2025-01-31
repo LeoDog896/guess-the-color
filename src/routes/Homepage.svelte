@@ -20,4 +20,10 @@
 	main {
 		text-align: center;
 	}
+
+	@media (max-width: 600px) {
+		h1 {
+			font-size: 4rem;
+		}
+	}
 </style>
